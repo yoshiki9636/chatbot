@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>チャットボット</title>
+    <!-- CSSファイルを読み込む -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- ヘッダー部分 -->
+    <header>
+        <!-- サービスのタイトル -->
+        <h1>○○向けチャットボット</h1>
+    </header>
+    <!-- 質問を入力するフォーム -->
+    <form method="POST">
+        <label for="question">質問前を入力してください:</label><br>
+        <input type="text" size=100px id=""question" name="question"><br>
+        <input type="submit" value="質問する">
+    </form>
+    <!-- レスポンスがある場合に表示 -->
+    {% if response %}
+    <div class="response">
+        <!-- レスポンスを表示（HTMLタグをエスケープしない） -->
+        <p>{{ response|safe }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
+
+
